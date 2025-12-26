@@ -289,22 +289,22 @@ This task is simple, but so repetitive, we have a Hex Dump that should be revers
 Note that in the solution I went quick, to know what decompression you are going for, use the "file" command as we learned in the previous challenges.
 ### Solution
 ```bash
-bandit12@bandit:~$ mkdir /tmp/oussama
-bandit12@bandit:~$ cd /tmp/oussama
-bandit12@bandit:/tmp/oussama$ cp ~/data.txt .
-bandit12@bandit:/tmp/oussama$ xxd -r data > binary
-bandit12@bandit:/tmp/oussama$ mv binary binary.gz # we need that suffix for the command to work
-bandit12@bandit:/tmp/oussama$ gzip -d binary.gz
-bandit12@bandit:/tmp/oussama$ bzip2 -d binary
-bandit12@bandit:/tmp/oussama$ mv binary.out binary.gz
-bandit12@bandit:/tmp/oussama$ gzip -d binary.gz
-bandit12@bandit:/tmp/oussama$ tar -xf binary
-bandit12@bandit:/tmp/oussama$ tar -xf data5.bin
-bandit12@bandit:/tmp/oussama$ bzip2 -d data6.bin 2>/dev/null
-bandit12@bandit:/tmp/oussama$ tar -xf data6.bin.out
-bandit12@bandit:/tmp/oussama$ mv data8.bin data8.gz
-bandit12@bandit:/tmp/oussama$ gzip -d data8.gz
-bandit12@bandit:/tmp/oussama$ cat data8
+bandit12@bandit:~$ mkdir /tmp/mikka
+bandit12@bandit:~$ cd /tmp/mikka
+bandit12@bandit:/tmp/mikka$ cp ~/data.txt .
+bandit12@bandit:/tmp/mikka$ xxd -r data > binary
+bandit12@bandit:/tmp/mikka$ mv binary binary.gz # we need that suffix for the command to work
+bandit12@bandit:/tmp/mikka$ gzip -d binary.gz
+bandit12@bandit:/tmp/mikka$ bzip2 -d binary
+bandit12@bandit:/tmp/mikka$ mv binary.out binary.gz
+bandit12@bandit:/tmp/mikka$ gzip -d binary.gz
+bandit12@bandit:/tmp/mikka$ tar -xf binary
+bandit12@bandit:/tmp/mikka$ tar -xf data5.bin
+bandit12@bandit:/tmp/mikka$ bzip2 -d data6.bin 2>/dev/null
+bandit12@bandit:/tmp/mikka$ tar -xf data6.bin.out
+bandit12@bandit:/tmp/mikka$ mv data8.bin data8.gz
+bandit12@bandit:/tmp/mikka$ gzip -d data8.gz
+bandit12@bandit:/tmp/mikka$ cat data8
 The password is [REDACTED]
 ```
 ## Level 13 → 14
@@ -412,11 +412,11 @@ Correct!
 -----BEGIN RSA PRIVATE KEY-----
 [REDACTED]
 -----END RSA PRIVATE KEY-----
-bandit16@bandit:~$ mkdir /tmp/oussama
-bandit16@bandit:~$ cd /tmp/oussama
-bandit16@bandit:/tmp/oussama$ nano id_rsa # paste the content and hit ctrl+o then ctrl+x
-bandit16@bandit:/tmp/oussama$ chmod 600 id_rsa
-bandit16@bandit:/tmp/oussama$ ssh -i id_rsa bandit17@localhost
+bandit16@bandit:~$ mkdir /tmp/mikka
+bandit16@bandit:~$ cd /tmp/mikka
+bandit16@bandit:/tmp/mikka$ nano id_rsa # paste the content and hit ctrl+o then ctrl+x
+bandit16@bandit:/tmp/mikka$ chmod 600 id_rsa
+bandit16@bandit:/tmp/mikka$ ssh -i id_rsa bandit17@localhost
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
 [REDACTED]
 ```
@@ -452,7 +452,7 @@ In this challenge we are logged out as soon as we log in, the password is saved 
 
 ### Solution
 ```bash
-oussama@oussama:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat ~/readme'
+mikka@mikka:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat ~/readme'
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit18@bandit.labs.overthewire.orgs password:
@@ -635,18 +635,18 @@ do
         rm -f ./$i
     fi
 done
-bandit23@bandit:/etc/cron.d$ mkdir /tmp/oussamalevel24
-bandit23@bandit:/etc/cron.d$ cd /tmp/oussamalevel24
-bandit23@bandit:/tmp/oussamalevel24$ nano script.sh
+bandit23@bandit:/etc/cron.d$ mkdir /tmp/mikkalevel24
+bandit23@bandit:/etc/cron.d$ cd /tmp/mikkalevel24
+bandit23@bandit:/tmp/mikkalevel24$ nano script.sh
 # the content of the script
 #!/bin/bash
-cat /etc/bandit_pass/bandit24 > /tmp/oussamalevel24/bandit24
-bandit23@bandit:/tmp/oussamalevel24$ chmod +x script.sh
-bandit23@bandit:/tmp/oussamalevel24$ touch bandit24
-bandit23@bandit:/tmp/oussamalevel24$ chmod a+w bandit24
-bandit23@bandit:/tmp/oussamalevel24$ cp script.sh /var/spool/bandit24
-bandit23@bandit:/tmp/oussamalevel24$ # wait one minute or so
-bandit23@bandit:/tmp/oussamalevel24$ cat bandit24
+cat /etc/bandit_pass/bandit24 > /tmp/mikkalevel24/bandit24
+bandit23@bandit:/tmp/mikkalevel24$ chmod +x script.sh
+bandit23@bandit:/tmp/mikkalevel24$ touch bandit24
+bandit23@bandit:/tmp/mikkalevel24$ chmod a+w bandit24
+bandit23@bandit:/tmp/mikkalevel24$ cp script.sh /var/spool/bandit24
+bandit23@bandit:/tmp/mikkalevel24$ # wait one minute or so
+bandit23@bandit:/tmp/mikkalevel24$ cat bandit24
 [REDACTED]
 ```
 
@@ -667,9 +667,9 @@ Example: bandit24_password 1234
 
 ### Solution
 ```bash
-bandit24@bandit:~$ mkdir /tmp/oussamalevel25
-bandit24@bandit:~$ cd /tmp/oussamalevel25
-bandit24@bandit:/tmp/oussamalevel25$ nano script.sh
+bandit24@bandit:~$ mkdir /tmp/mikkalevel25
+bandit24@bandit:~$ cd /tmp/mikkalevel25
+bandit24@bandit:/tmp/mikkalevel25$ nano script.sh
 # paste the script content, we are simply creating all the possible combinations
 #!/bin/bash
 
@@ -677,10 +677,10 @@ for i in {0000..9999}; do
         # note the use of >> so append and not overwrite
         echo "UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ" $i >> passwords
 done
-bandit24@bandit:/tmp/oussamalevel25$ chmod +x script.sh
-bandit24@bandit:/tmp/oussamalevel25$ ./script.sh
-bandit24@bandit:/tmp/oussamalevel25$ cat passwords | nc localhost 30002 >> result
-bandit24@bandit:/tmp/oussamalevel25$ cat result | grep 'The password'
+bandit24@bandit:/tmp/mikkalevel25$ chmod +x script.sh
+bandit24@bandit:/tmp/mikkalevel25$ ./script.sh
+bandit24@bandit:/tmp/mikkalevel25$ cat passwords | nc localhost 30002 >> result
+bandit24@bandit:/tmp/mikkalevel25$ cat result | grep 'The password'
 The password of user bandit25 is [REDACTED]
 ```
 
@@ -757,9 +757,9 @@ In this challenge, we will practice our git skills, so we are given a remote rep
 ### Solution
 ```bash
 bandit27@bandit:~$ cd /tmp
-bandit27@bandit:/tmp$ mkdir oussamalevel27
-bandit27@bandit:/tmp$ cd oussamalevel27
-bandit27@bandit:/tmp/oussamalevel27$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+bandit27@bandit:/tmp$ mkdir mikkalevel27
+bandit27@bandit:/tmp$ cd mikkalevel27
+bandit27@bandit:/tmp/mikkalevel27$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
 Cloning into 'repo'...
 Could not create directory '/home/bandit27/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
@@ -773,12 +773,12 @@ remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 remote: Total 3 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (3/3), done.
-bandit27@bandit:/tmp/oussamalevel27$ ls
+bandit27@bandit:/tmp/mikkalevel27$ ls
 repo
-bandit27@bandit:/tmp/oussamalevel27$ cd repo/
-bandit27@bandit:/tmp/oussamalevel27/repo$ ls
+bandit27@bandit:/tmp/mikkalevel27$ cd repo/
+bandit27@bandit:/tmp/mikkalevel27/repo$ ls
 README
-bandit27@bandit:/tmp/oussamalevel27/repo$ cat README
+bandit27@bandit:/tmp/mikkalevel27/repo$ cat README
 The password to the next level is: [REDACTED]
 ```
 ## Level 28 → 29
@@ -797,9 +797,9 @@ Still practising our git skills, this time we need to go one step back to get th
 ### Solution
 ```bash
 bandit28@bandit:~$ cd /tmp
-bandit28@bandit:/tmp$ mkdir oussamalevel28
-bandit28@bandit:/tmp$ cd oussamalevel28
-bandit28@bandit:/tmp/oussamalevel28$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
+bandit28@bandit:/tmp$ mkdir mikkalevel28
+bandit28@bandit:/tmp$ cd mikkalevel28
+bandit28@bandit:/tmp/mikkalevel28$ git clone ssh://bandit28-git@localhost/home/bandit28-git/repo
 Cloning into 'repo'...
 Could not create directory '/home/bandit28/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
@@ -814,10 +814,10 @@ remote: Compressing objects: 100% (6/6), done.
 remote: Total 9 (delta 2), reused 0 (delta 0)
 Receiving objects: 100% (9/9), done.
 Resolving deltas: 100% (2/2), done.
-bandit28@bandit:/tmp/oussamalevel28$ cd repo/
-bandit28@bandit:/tmp/oussamalevel28/repo$ ls
+bandit28@bandit:/tmp/mikkalevel28$ cd repo/
+bandit28@bandit:/tmp/mikkalevel28/repo$ ls
 README.md
-bandit28@bandit:/tmp/oussamalevel28/repo$ cat README.md
+bandit28@bandit:/tmp/mikkalevel28/repo$ cat README.md
 # Bandit Notes
 Some notes for level29 of bandit.
 
@@ -826,7 +826,7 @@ Some notes for level29 of bandit.
 - username: bandit29
 - password: xxxxxxxxxx
 
-bandit28@bandit:/tmp/oussamalevel28/repo$ git log
+bandit28@bandit:/tmp/mikkalevel28/repo$ git log
 commit edd935d60906b33f0619605abd1689808ccdd5ee
 Author: Morla Porla <morla@overthewire.org>
 Date:   Thu May 7 20:14:49 2020 +0200
@@ -844,7 +844,7 @@ Author: Ben Dover <noone@overthewire.org>
 Date:   Thu May 7 20:14:49 2020 +0200
 
     initial commit of README.md
-bandit28@bandit:/tmp/oussamalevel28/repo$ git checkout c086d11a00c0648d095d04c089786efef5e01264
+bandit28@bandit:/tmp/mikkalevel28/repo$ git checkout c086d11a00c0648d095d04c089786efef5e01264
 Note: checking out 'c086d11a00c0648d095d04c089786efef5e01264'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
@@ -857,7 +857,7 @@ do so (now or later) by using -b with the checkout command again. Example:
   git checkout -b <new-branch-name>
 
 HEAD is now at c086d11... add missing data
-bandit28@bandit:/tmp/oussamalevel28/repo$ cat README.md
+bandit28@bandit:/tmp/mikkalevel28/repo$ cat README.md
 # Bandit Notes
 Some notes for level29 of bandit.
 
@@ -880,9 +880,9 @@ Still with the git challenges, this time we will play around with branches.
 
 ### Solution
 ```bash
-bandit29@bandit:~$ mkdir /tmp/oussamalevel29
-bandit29@bandit:~$ cd /tmp/oussamalevel29
-bandit29@bandit:/tmp/oussamalevel29$ git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
+bandit29@bandit:~$ mkdir /tmp/mikkalevel29
+bandit29@bandit:~$ cd /tmp/mikkalevel29
+bandit29@bandit:/tmp/mikkalevel29$ git clone ssh://bandit29-git@localhost/home/bandit29-git/repo
 Cloning into 'repo'...
 Could not create directory '/home/bandit29/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
@@ -897,9 +897,9 @@ remote: Compressing objects: 100% (11/11), done.
 remote: Total 16 (delta 2), reused 0 (delta 0)
 Receiving objects: 100% (16/16), done.
 Resolving deltas: 100% (2/2), done.
-bandit29@bandit:/tmp/oussamalevel29$ ls
+bandit29@bandit:/tmp/mikkalevel29$ ls
 README.md
-bandit29@bandit:/tmp/oussamalevel29$ cat README.md
+bandit29@bandit:/tmp/mikkalevel29$ cat README.md
 # Bandit Notes
 Some notes for bandit30 of bandit.
 
@@ -907,17 +907,17 @@ Some notes for bandit30 of bandit.
 
 - username: bandit30
 - password: <no passwords in production!>
-bandit29@bandit:/tmp/oussamalevel29$ git branch -r # listing only the remote branches, you can use -a as well
+bandit29@bandit:/tmp/mikkalevel29$ git branch -r # listing only the remote branches, you can use -a as well
   origin/HEAD -> origin/master
   origin/dev
   origin/master
   origin/sploits-dev
-bandit29@bandit:/tmp/oussamalevel29$ git checkout dev
+bandit29@bandit:/tmp/mikkalevel29$ git checkout dev
 Branch dev set up to track remote branch dev from origin.
 Switched to a new branch 'dev'
-bandit29@bandit:/tmp/oussamalevel29$ ls
+bandit29@bandit:/tmp/mikkalevel29$ ls
 code  README.md
-bandit29@bandit:/tmp/oussamalevel29$ cat README.md
+bandit29@bandit:/tmp/mikkalevel29$ cat README.md
 # Bandit Notes
 Some notes for bandit30 of bandit.
 
@@ -945,8 +945,8 @@ In simple words, tags are labels that can be used to identify a specific commit.
 And the book I shared in the previous challenges.
 ### Solution
 ```bash
-bandit29@bandit:~$ mkdir /tmp/oussamalevel30 && cd $_
-bandit30@bandit:/tmp/oussamalevel30$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
+bandit29@bandit:~$ mkdir /tmp/mikkalevel30 && cd $_
+bandit30@bandit:/tmp/mikkalevel30$ git clone ssh://bandit30-git@localhost/home/bandit30-git/repo
 Cloning into 'repo'...
 Could not create directory '/home/bandit30/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
@@ -959,10 +959,10 @@ bandit30-git@localhosts password:
 remote: Counting objects: 4, done.
 remote: Total 4 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (4/4), done.
-bandit30@bandit:/tmp/oussamalevel30$ cd repo/
-bandit30@bandit:/tmp/oussamalevel30/repo$ git tag
+bandit30@bandit:/tmp/mikkalevel30$ cd repo/
+bandit30@bandit:/tmp/mikkalevel30/repo$ git tag
 secret
-bandit30@bandit:/tmp/oussamalevel30/repo$ git show secret
+bandit30@bandit:/tmp/mikkalevel30/repo$ git show secret
 [REDACTED]
 ```
 ## Level 31 → 32
@@ -982,8 +982,8 @@ But, there is a ".gitignore" file that ignores all txt files, so we need to get 
 
 ### Solution
 ```bash
-bandit31@bandit:~$ mkdir /tmp/oussamalevel31 && cd clear
-bandit31@bandit:/tmp/oussamalevel31$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
+bandit31@bandit:~$ mkdir /tmp/mikkalevel31 && cd clear
+bandit31@bandit:/tmp/mikkalevel31$ git clone ssh://bandit31-git@localhost/home/bandit31-git/repo
 Cloning into 'repo'...
 Could not create directory '/home/bandit31/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
@@ -997,10 +997,10 @@ remote: Counting objects: 4, done.
 remote: Compressing objects: 100% (3/3), done.
 remote: Total 4 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (4/4), 383 bytes | 0 bytes/s, done.
-bandit31@bandit:/tmp/oussamalevel31$ cd repo/
-bandit31@bandit:/tmp/oussamalevel31/repo$ ls
+bandit31@bandit:/tmp/mikkalevel31$ cd repo/
+bandit31@bandit:/tmp/mikkalevel31/repo$ ls
 README.md
-bandit31@bandit:/tmp/oussamalevel31/repo$ cat README.md
+bandit31@bandit:/tmp/mikkalevel31/repo$ cat README.md
 This time your task is to push a file to the remote repository.
 
 Details:
@@ -1008,17 +1008,17 @@ Details:
     Content: 'May I come in?'
     Branch: master
 
-bandit31@bandit:/tmp/oussamalevel31/repo$ cat .gitignore
+bandit31@bandit:/tmp/mikkalevel31/repo$ cat .gitignore
 *.txt
-bandit31@bandit:/tmp/oussamalevel31/repo$ rm .gitignore
-bandit31@bandit:/tmp/oussamalevel31/repo$ echo 'May I come in?' > key.txt
-bandit31@bandit:/tmp/oussamalevel31/repo$ git add .
-bandit31@bandit:/tmp/oussamalevel31/repo$ git commit -m 'Added key.txt'
+bandit31@bandit:/tmp/mikkalevel31/repo$ rm .gitignore
+bandit31@bandit:/tmp/mikkalevel31/repo$ echo 'May I come in?' > key.txt
+bandit31@bandit:/tmp/mikkalevel31/repo$ git add .
+bandit31@bandit:/tmp/mikkalevel31/repo$ git commit -m 'Added key.txt'
 [master f312353] Added key.txt
  2 files changed, 1 insertion(+), 1 deletion(-)
  delete mode 100644 .gitignore
  create mode 100644 key.txt
-bandit31@bandit:/tmp/oussamalevel31/repo$ git push origin master
+bandit31@bandit:/tmp/mikkalevel31/repo$ git push origin master
 Could not create directory '/home/bandit31/.ssh'.
 The authenticity of host 'localhost (127.0.0.1)' cant be established.
 ECDSA key fingerprint is SHA256:98UL0ZWr85496EtCRkKlo20X3OPnyPSB5tB5RPbhczc.
@@ -1068,3 +1068,5 @@ total 8
 $ whoami
 bandit33
 ```
+
+
