@@ -32,7 +32,7 @@ log into that level and continue the game.
 bandit0@bandit:~$ ls
 readme
 bandit0@bandit:~$ cat readme 
-[REDACTED]
+PASSWORD
 
 ```
 ## Level 1 → 2
@@ -46,7 +46,7 @@ called - located in the home directory
 bandit1@bandit:~$ ls
 -
 bandit1@bandit:~$ ./- # or use the full path
-[REDACTED]
+PASSWORD
 
 ```
 ## Level 2 → 3
@@ -59,7 +59,7 @@ The password for the next level is stored in a file called -
 bandit2@bandit:~$ ls
 spaces in this filename
 bandit2@bandit:~$ cat spaces\ in\ this\ filename
-[REDACTED]
+PASSWORD
 
 ```
 ## Level 3 → 4
@@ -79,7 +79,7 @@ drwxr-xr-x 2 root    root    4096 May  7  2020 .
 drwxr-xr-x 3 root    root    4096 May  7  2020 ..
 -rw-r----- 1 bandit4 bandit3   33 May  7  2020 .hidden
 bandit3@bandit:~$ cat .hidden
-[REDACTED]
+PASSWORD
 
 ```
 ## Level 4 → 5
@@ -97,7 +97,7 @@ bandit4@bandit:~$ cd inhere
 bandit4@bandit:~/inhere$ file ./* | grep "text" # there is no need for the grep in this level.
 ./-file07: ASCII text
 bandit4@bandit:~/inhere$ cat ./-file07
-[REDACTED]
+PASSWORD
 ```
 ## Level 5 → 6
 ### Level Goal
@@ -122,7 +122,7 @@ maybehere02  maybehere05  maybehere08  maybehere11  maybehere14  maybehere17
 bandit5@bandit:~/inhere$ find . -readable -size 1033c ! -executable
 ./maybehere07/.file2
 bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
-[REDACTED]
+PASSWORD
 ```
 ## Level 6 → 7
 ### Level Goal
@@ -138,7 +138,7 @@ bandit6@bandit:~$ ls
 bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 /var/lib/dpkg/info/bandit7.password
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
-[REDACTED]
+PASSWORD
 ```
 ## Level 7 → 8
 ### Level Goal
@@ -150,7 +150,7 @@ file data.txt next to the word millionth
 bandit7@bandit:~$ ls
 data.txt
 bandit7@bandit:~$ cat data.txt | grep "millionth"
-millionth       [REDACTED]
+millionth       PASSWORD
 bandit7@bandit:~$
 
 
@@ -167,7 +167,7 @@ once
 bandit8@bandit:~$ ls
 data.txt
 bandit8@bandit:~$ sort data.txt | uniq -u
-[REDACTED]
+PASSWORD
 ```
 ## Level 9 → 10
 ### Level Goal
@@ -191,7 +191,7 @@ A=|t&E
 Zdb=
 c^ LAh=3G
 *SF=s
-&========== [REDACTED]
+&========== PASSWORD
 S=A.H&^
 ```
 ## Level 10 → 11
@@ -205,7 +205,7 @@ file data.txt, which contains base64 encoded data
 bandit10@bandit:~$ ls
 data.txt
 bandit10@bandit:~$ cat data.txt | base64 -d
-The password is [REDACTED]
+The password is PASSWORD
 ```
 ## Level 11 → 12
 ### Level Goal
@@ -216,7 +216,7 @@ file data.txt, where all lowercase (a-z) and uppercase (AZ) letters have been ro
 ### Solution
 ```bash
 bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
-The password is [REDACTED]
+The password is PASSWORD
 ```
 ## Level 12 → 13
 ### Level Goal
@@ -246,7 +246,7 @@ bandit12@bandit:/tmp/mikka$ tar -xf data6.bin.out
 bandit12@bandit:/tmp/mikka$ mv data8.bin data8.gz
 bandit12@bandit:/tmp/mikka$ gzip -d data8.gz
 bandit12@bandit:/tmp/mikka$ cat data8
-The password is [REDACTED]
+The password is PASSWORD
 ```
 ## Level 13 → 14
 ### Level Goal
@@ -341,7 +341,7 @@ depth=0 CN = localhost
 verify return:1
 Correct!
 -----BEGIN RSA PRIVATE KEY-----
-[REDACTED]
+PASSWORD
 -----END RSA PRIVATE KEY-----
 bandit16@bandit:~$ mkdir /tmp/mikka
 bandit16@bandit:~$ cd /tmp/mikka
@@ -349,7 +349,7 @@ bandit16@bandit:/tmp/mikka$ nano id_rsa # paste the content and hit ctrl+o then 
 bandit16@bandit:/tmp/mikka$ chmod 600 id_rsa
 bandit16@bandit:/tmp/mikka$ ssh -i id_rsa bandit17@localhost
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
-[REDACTED]
+PASSWORD
 ```
 ## Level 17 → 18
 ### Level Goal
@@ -368,7 +368,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new
 42c42
 < w0Yfolrc5bwjS4qw5mq1nnQi6mF03bii
 ---
-> [REDACTED]
+> PASSWORD
 ```
 
 ## Level 18 → 19
@@ -384,7 +384,7 @@ mikka@mikka:~$ ssh bandit18@bandit.labs.overthewire.org -p 2220 'cat ~/readme'
 This is a OverTheWire game server. More information on http://www.overthewire.org/wargames
 
 bandit18@bandit.labs.overthewire.orgs password:
-[REDACTED]
+PASSWORD
 ```
 ## Level 19 → 20
 ### Level Goal
@@ -402,7 +402,7 @@ bandit19@bandit:~$ ./bandit20-do
 Run a command as another user.
   Example: ./bandit20-do id
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
-[REDACTED]
+PASSWORD
 ```
 ## Level 20 → 21
 ### Level Goal
@@ -455,7 +455,7 @@ bandit21@bandit:/etc/cron.d$ cat /usr/bin/cronjob_bandit22.sh
 chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 bandit21@bandit:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-[REDACTED]
+PASSWORD
 ```
 ## Level 22 → 23
 ### Level Goal
@@ -491,7 +491,7 @@ cat /etc/bandit_pass/$myname > /tmp/$mytarget
 bandit22@bandit:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d   -f 1
 8ca319486bfbbc3663ea0fbe81326349
 bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
-[REDACTED]
+PASSWORD
 ```
 
 ## Level 23 → 24
@@ -549,7 +549,7 @@ bandit23@bandit:/tmp/mikkalevel24$ chmod a+w bandit24
 bandit23@bandit:/tmp/mikkalevel24$ cp script.sh /var/spool/bandit24
 bandit23@bandit:/tmp/mikkalevel24$ # wait one minute or so
 bandit23@bandit:/tmp/mikkalevel24$ cat bandit24
-[REDACTED]
+PASSWORD
 ```
 
 ## Level 24 → 25
@@ -578,7 +578,7 @@ bandit24@bandit:/tmp/mikkalevel25$ chmod +x script.sh
 bandit24@bandit:/tmp/mikkalevel25$ ./script.sh
 bandit24@bandit:/tmp/mikkalevel25$ cat passwords | nc localhost 30002 >> result
 bandit24@bandit:/tmp/mikkalevel25$ cat result | grep 'The password'
-The password of user bandit25 is [REDACTED]
+The password of user bandit25 is PASSWORD
 ```
 
 ## Level 25 → 26
@@ -615,7 +615,7 @@ bandit25@bandit:~$ ssh -i bandit26.sshkey bandit26@127.0.0.1
 bandit25@bandit:~$ # this time it won't exit, so let's abuse more, by entering vim, hit v
 bandit25@bandit:~$ # we can use vim to spawn a shell, (make sure you are in command mode by hitting esc) type :set shell=/bin/bash then type :shell, that's it!
 bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
-[REDACTED]
+PASSWORD
 ```
 ## Level 26 → 27
 ### Level Goal
@@ -631,7 +631,7 @@ bandit26@bandit:~$ ./bandit27-do
 Run a command as another user.
   Example: ./bandit27-do id
 bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
-[REDACTED]
+PASSWORD
 ```
 ## Level 27 → 28
 ### Level Goal
@@ -668,7 +668,7 @@ bandit27@bandit:/tmp/mikkalevel27$ cd repo/
 bandit27@bandit:/tmp/mikkalevel27/repo$ ls
 README
 bandit27@bandit:/tmp/mikkalevel27/repo$ cat README
-The password to the next level is: [REDACTED]
+The password to the next level is: PASSWORD
 ```
 ## Level 28 → 29
 ### Level Goal
@@ -751,7 +751,7 @@ Some notes for level29 of bandit.
 ## credentials
 
 - username: bandit29
-- password: [REDACTED]
+- password: PASSWORD
 ```
 ## Level 29 → 30
 ### Level Goal
@@ -809,7 +809,7 @@ Some notes for bandit30 of bandit.
 ## credentials
 
 - username: bandit30
-- password: [REDACTED]
+- password: PASSWORD
 ```
 ## Level 30 → 31
 ### Level Goal
@@ -841,7 +841,7 @@ bandit30@bandit:/tmp/mikkalevel30$ cd repo/
 bandit30@bandit:/tmp/mikkalevel30/repo$ git tag
 secret
 bandit30@bandit:/tmp/mikkalevel30/repo$ git show secret
-[REDACTED]
+PASSWORD
 ```
 ## Level 31 → 32
 ### Level Goal
