@@ -35,6 +35,7 @@ bandit0@bandit:~$ cat readme
 PASSWORD
 
 ```
+PASSWORD: ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
 ## Level 1 → 2
 ### Level Goal
 The password for the next level is stored in a file
@@ -49,6 +50,7 @@ bandit1@bandit:~$ ./- # or use the full path
 PASSWORD
 
 ```
+PASSWORD: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
 ## Level 2 → 3
 ### Level Goal
 The password for the next level is stored in a file called -
@@ -62,6 +64,7 @@ bandit2@bandit:~$ cat spaces\ in\ this\ filename
 PASSWORD
 
 ```
+PASSWORD: MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
 ## Level 3 → 4
 ### Level Goal
 The password for the next level is stored in a hidden file
@@ -82,6 +85,7 @@ bandit3@bandit:~$ cat .hidden
 PASSWORD
 
 ```
+PASSWORD: 2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
 ## Level 4 → 5
 ### Level Goal
  The password for the next level is stored in the only
@@ -99,6 +103,7 @@ bandit4@bandit:~/inhere$ file ./* | grep "text" # there is no need for the grep 
 bandit4@bandit:~/inhere$ cat ./-file07
 PASSWORD
 ```
+PASSWORD: 4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
 ## Level 5 → 6
 ### Level Goal
 The password for the next level is stored in a file
@@ -124,6 +129,7 @@ bandit5@bandit:~/inhere$ find . -readable -size 1033c ! -executable
 bandit5@bandit:~/inhere$ cat ./maybehere07/.file2
 PASSWORD
 ```
+PASSWORD: HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
 ## Level 6 → 7
 ### Level Goal
 The password for the next level is stored somewhere on
@@ -140,6 +146,7 @@ bandit6@bandit:~$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
 bandit6@bandit:~$ cat /var/lib/dpkg/info/bandit7.password
 PASSWORD
 ```
+PASSWORD: morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
 ## Level 7 → 8
 ### Level Goal
 The password for the next level is stored in the
@@ -155,6 +162,7 @@ bandit7@bandit:~$
 
 
 ```
+PASSWORD: dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
 ## Level 8 → 9
 ### Level Goal
 The password for the next level is stored in the
@@ -169,6 +177,7 @@ data.txt
 bandit8@bandit:~$ sort data.txt | uniq -u
 PASSWORD
 ```
+PASSWORD: 4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
 ## Level 9 → 10
 ### Level Goal
 The password for the next level is stored in the
@@ -194,6 +203,7 @@ c^ LAh=3G
 &========== PASSWORD
 S=A.H&^
 ```
+PASSWORD: FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
 ## Level 10 → 11
 ### Level Goal
 The password for the next level is stored in the
@@ -207,6 +217,7 @@ data.txt
 bandit10@bandit:~$ cat data.txt | base64 -d
 The password is PASSWORD
 ```
+PASSWORD: dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
 ## Level 11 → 12
 ### Level Goal
 The password for the next level is stored in the
@@ -218,6 +229,7 @@ file data.txt, where all lowercase (a-z) and uppercase (AZ) letters have been ro
 bandit11@bandit:~$ cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'
 The password is PASSWORD
 ```
+PASSWORD: 7x16WNeHIi5YkIhWsfFIqoognUTyj9Q
 ## Level 12 → 13
 ### Level Goal
 The password for the next level is stored in the
@@ -248,6 +260,7 @@ bandit12@bandit:/tmp/mikka$ gzip -d data8.gz
 bandit12@bandit:/tmp/mikka$ cat data8
 The password is PASSWORD
 ```
+PASSWORD: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
 ## Level 13 → 14
 ### Level Goal
 The password for the next level is stored
@@ -274,12 +287,14 @@ submitting the password of the current level to port
 ### Solution
 ```bash
 bandit14@bandit:~$ cat /etc/bandit_pass/bandit14
-[REDACTED - current password]
+[current password]
 bandit14@bandit:~$ nc 127.0.0.1 30000
-[REDACTED - current password] # simply paste the bandit14's password and hit enter
+[current password] # simply paste the bandit14's password and hit enter
 Correct!
-[REDACTED - password for the next level]
+[password for the next level]
 ```
+CURRENT PASSWORD: FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+PASSWORD FOR THE NEXT LEVEL: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
 ## Level 15 → 16
 ### Level Goal
 The password for the next level can be retrieved by
@@ -295,12 +310,14 @@ manpage.
 ### Solution
 ```bash
 bandit15@bandit:~$ cat /etc/bandit_pass/bandit15
-[REDACTED - current password]
+[current password]
 bandit15@bandit:~$ ncat -C --ssl 127.0.0.1 30001
-[REDACTED - current password]
+[current password]
 Correct!
-[REDACTED - password for the next level]
+[password for the next level]
 ```
+CURRENT PASSWORD: 8xCjnmgoKbGLhHFAZlGE5Tmu4M2tKJQo
+PASSWORD FOR THE NEXT LEVEL: kSkvUpMQ7lBYyCM4GBPvCvT1BfWRy0Dx
 ## Level 16 → 17
 ### Level Goal
 The credentials for the next level can be retrieved by
@@ -351,6 +368,8 @@ bandit16@bandit:/tmp/mikka$ ssh -i id_rsa bandit17@localhost
 bandit17@bandit:~$ cat /etc/bandit_pass/bandit17
 PASSWORD
 ```
+PASSWORD: MIIEogIBAAKCAQEAvmOkuifmMg6HL2YPIOjon6iWfbp7c3jx34YkYWqUH57SUdyJ imZzeyGC0gtZPGujUSxiJSWI/oTqexh+cAMTSMlOJf7+BrJObArnxd9Y7YT2bRPQ Ja6Lzb558YW3FZl87ORiO+rW4LCDCNd2lUvLE/GL2GWyuKN0K5iCd5TbtJzEkQTu DSt2mcNn4rhAL+JFr56o4T6z8WWAW18BR6yGrMq7Q/kALHYW3OekePQAzL0VUYbW JGTi65CxbCnzc/w4+mqQyvmzpWtMAzJTzAzQxNbkR2MBGySxDLrjg0LWN6sK7wNX x0YVztz/zbIkPjfkU1jHS+9EbVNj+D1XFOJuaQIDAQABAoIBABagpxpM1aoLWfvD KHcj10nqcoBc4oE11aFYQwik7xfW+24pRNuDE6SFthOar69jp5RlLwD1NhPx3iBl J9nOM8OJ0VToum43UOS8YxF8WwhXriYGnc1sskbwpXOUDc9uX4+UESzH22P29ovd d8WErY0gPxun8pbJLmxkAtWNhpMvfe0050vk9TL5wqbu9AlbssgTcCXkMQnPw9nC YNN6DDP2lbcBrvgT9YCNL6C+ZKufD52yOQ9qOkwFTEQpjtF4uNtJom+asvlpmS8A vLY9r60wYSvmZhNqBUrj7lyCtXMIu1kkd4w7F77k+DjHoAXyxcUp1DGL51sOmama +TOWWgECgYEA8JtPxP0GRJ+IQkX262jM3dEIkza8ky5moIwUqYdsx0NxHgRRhORT 8c8hAuRBb2G82so8vUHk/fur85OEfc9TncnCY2crpoqsghifKLxrLgtT+qDpfZnx SatLdt8GfQ85yA7hnWWJ2MxF3NaeSDm75Lsm+tBbAiyc9P2jGRNtMSkCgYEAypHd HCctNi/FwjulhttFx/rHYKhLidZDFYeiE/v45bN4yFm8x7R/b0iE7KaszX+Exdvt SghaTdcG0Knyw1bpJVyusavPzpaJMjdJ6tcFhVAbAjm7enCIvGCSx+X3l5SiWg0A R57hJglezIiVjv3aGwHwvlZvtszK6zV6oXFAu0ECgYAbjo46T4hyP5tJi93V5HDi Ttiek7xRVxUl+iU7rWkGAXFpMLFteQEsRr7PJ/lemmEY5eTDAFMLy9FL2m9oQWCg R8VdwSk8r9FGLS+9aKcV5PI/WEKlwgXinB3OhYimtiG2Cg5JCqIZFHxD6MjEGOiu L8ktHMPvodBwNsSBULpG0QKBgBAplTfC1HOnWiMGOU3KPwYWt0O6CdTkmJOmL8Ni blh9elyZ9FsGxsgtRBXRsqXuz7wtsQAgLHxbdLq/ZJQ7YfzOKU4ZxEnabvXnvWkU YOdjHdSOoKvDQNWu6ucyLRAWFuISeXw9a/9p7ftpxm0TSgyvmfLF2MIAEwyzRqaM 77pBAoGAMmjmIJdjp+Ez8duyn3ieo36yrttF5NSsJLAbxFpdlc1gvtGCWW+9Cq0b dxviW8+TFVEBl1O4f7HVm6EpTscdDxU+bCXWkfjuRb7Dy9GOtt9JPsX8MBTakzh3 vBgsyi/sN3RqRBcGU40fOoZyfAMT8s1m/uYv52O6IgeuZ/ujbjY
+
 ## Level 17 → 18
 ### Level Goal
 There are 2 files in the homedirectory: passwords.old
@@ -370,7 +389,7 @@ bandit17@bandit:~$ diff passwords.old passwords.new
 ---
 > PASSWORD
 ```
-
+PASSWORD: x2gLTTjFwMOHQ80wNbMN362QKxfRqG1O
 ## Level 18 → 19
 ### Level Goal
 The password for the next level is stored in a
@@ -386,6 +405,7 @@ This is a OverTheWire game server. More information on http://www.overthewire.or
 bandit18@bandit.labs.overthewire.orgs password:
 PASSWORD
 ```
+PASSWORD: cGWpMaKXVwDUNgPAVJbWYuGHVn9zl3j8
 ## Level 19 → 20
 ### Level Goal
 To gain access to the next level, you should use the
@@ -404,6 +424,8 @@ Run a command as another user.
 bandit19@bandit:~$ ./bandit20-do cat /etc/bandit_pass/bandit20
 PASSWORD
 ```
+PASSWORD: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
 ## Level 20 → 21
 ### Level Goal
 There is a setuid binary in the homedirectory that does
@@ -424,14 +446,16 @@ suconnect
 bandit20@bandit:~$ ./suconnect
 Usage: ./suconnect <portnumber>
 This program will connect to the given port on localhost using TCP. If it receives the correct password from the other side, the next password is transmitted back.
-bandit20@bandit:~$ echo "[REDACTED - Current Password]" | netcat -lp 4444 &
+bandit20@bandit:~$ echo "[Current Password]" | netcat -lp 4444 &
 [1] 15831
 bandit20@bandit:~$ ./suconnect 4444
-Read: [REDACTED - Current Password]
+Read: [Current Password]
 Password matches, sending next password
-[REDACTED - New Password]
-[1]+  Done echo "[REDACTED - Current Password]" | netcat -lp 4444
+[New Password]
+[1]+  Done echo "[Current Password]" | netcat -lp 4444
 ```
+CURRENT PASSWORD: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+NEW PASSWORD: EeoULMCra2q0dSkYj561DX7s1CpBuOBt
 ## Level 21 → 22
 ### Level Goal
  A program is running automatically at regular intervals
@@ -457,6 +481,7 @@ cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 bandit21@bandit:/etc/cron.d$ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
 PASSWORD
 ```
+PASSWORD: tRae0UfB9v0UzbCdn9cY0gQnds9GF58Q
 ## Level 22 → 23
 ### Level Goal
 A program is running automatically at regular intervals
@@ -493,7 +518,7 @@ bandit22@bandit:/etc/cron.d$ echo I am user bandit23 | md5sum | cut -d   -f 1
 bandit22@bandit:/etc/cron.d$ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
 PASSWORD
 ```
-
+PASSWORD: 0Zf11ioIjMVN551jX3CmStKLYqjk54Ga
 ## Level 23 → 24
 ### Level Goal
 A program is running automatically at regular intervals
@@ -551,7 +576,7 @@ bandit23@bandit:/tmp/mikkalevel24$ # wait one minute or so
 bandit23@bandit:/tmp/mikkalevel24$ cat bandit24
 PASSWORD
 ```
-
+PASSWORD: gb8KRRCsshuZXI0tUuR6ypOFjiZbf3G8
 ## Level 24 → 25
 ### Level Goal
 A daemon is listening on port 30002 and will give you
@@ -580,7 +605,7 @@ bandit24@bandit:/tmp/mikkalevel25$ cat passwords | nc localhost 30002 >> result
 bandit24@bandit:/tmp/mikkalevel25$ cat result | grep 'The password'
 The password of user bandit25 is PASSWORD
 ```
-
+PASSWORD: iCi86ttT4KSNe1armKiwbQNmB3YJP3q4
 ## Level 25 → 26
 ### Level Goal
  Logging in to bandit26 from bandit25 should be fairly
@@ -617,6 +642,7 @@ bandit25@bandit:~$ # we can use vim to spawn a shell, (make sure you are in comm
 bandit26@bandit:~$ cat /etc/bandit_pass/bandit26
 PASSWORD
 ```
+PASSWORD: s0773xxkk0MXfdqOfPRVr9L3jJBUOgCZ
 ## Level 26 → 27
 ### Level Goal
  Good job getting a shell! Now hurry and grab the
@@ -633,6 +659,7 @@ Run a command as another user.
 bandit26@bandit:~$ ./bandit27-do cat /etc/bandit_pass/bandit27
 PASSWORD
 ```
+PASSWORD: upsNCc7vzaRDx6oZC6GiR6ERwe1MowGB
 ## Level 27 → 28
 ### Level Goal
  There is a git repository at ssh://bandit27-
@@ -670,6 +697,7 @@ README
 bandit27@bandit:/tmp/mikkalevel27/repo$ cat README
 The password to the next level is: PASSWORD
 ```
+PASSWORD: Yz9IpL0sBcCeuG7m9uQFt8ZNpS4HZRcN
 ## Level 28 → 29
 ### Level Goal
 There is a git repository at ssh://bandit28-
@@ -753,6 +781,7 @@ Some notes for level29 of bandit.
 - username: bandit29
 - password: PASSWORD
 ```
+PASSWORD: 4pT1t5DENaYuqnqvadYs1oE4QLCdjmJ7
 ## Level 29 → 30
 ### Level Goal
  There is a git repository at ssh://bandit29-
@@ -811,6 +840,7 @@ Some notes for bandit30 of bandit.
 - username: bandit30
 - password: PASSWORD
 ```
+PASSWORD: qp30ex3VLz5MDG1n91YowTv4Q8l7CDZL
 ## Level 30 → 31
 ### Level Goal
  There is a git repository at ssh://bandit31-
@@ -843,6 +873,7 @@ secret
 bandit30@bandit:/tmp/mikkalevel30/repo$ git show secret
 PASSWORD
 ```
+PASSWORD: fb5S2xb7bRyFmAvQYQGEqsbhVyJqhnDy
 ## Level 31 → 32
 ### Level Goal
 There is a git repository at ssh://bandit31-
@@ -919,6 +950,7 @@ To ssh://localhost/home/bandit31-git/repo
  ! [remote rejected] master -> master (pre-receive hook declined)
 error: failed to push some refs to 'ssh://bandit31-git@localhost/home/bandit31-git/repo'
 ```
+PASSWORD: 3O9RfhqyAlVBEZpVb6LYStshZoqoSx5K
 ## Level 32 → 33
 ### Level Goal
  After all this git stuff, it’s time for another escape. Good
@@ -937,5 +969,6 @@ total 8
 $ whoami
 bandit33
 ```
+PASSWORD:tQdtbs5D5i2vJwkO8mEyYEyTL8izoeJ0
 
 
